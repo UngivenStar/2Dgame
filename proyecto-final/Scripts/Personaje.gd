@@ -13,6 +13,8 @@ var monedas := 0
 @onready var animationPlayer = $AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var detector = $Detector
+ 
+
 
 func _ready():
 	add_to_group("personaje")
@@ -75,7 +77,7 @@ func agregar_moneda():
 	label_monedas.text = str(monedas)
 	
 func total_mon():
-	$Camera2D/ui/Total_monedas.text = "Monedas obtenidas:" % monedas
+	$Camera2D/ui/MonedaNum.text = "" % monedas
 	
 
 
@@ -87,6 +89,7 @@ func guardar_datos():
 			"posicion": {
 				"x": "%.8f" % global_position.x,
 				"y": "%.8f" % global_position.y
+				
 			}			
 		}
 	}
@@ -103,7 +106,7 @@ func cargar_datos():
 	if not FileAccess.file_exists("res://extra/datos/juego_guardado.json"):
 		print("No hay archivo")
 		return
-		
+	
 	var archivo = FileAccess.open("res://extra/datos/juego_guardado.json",FileAccess.READ)
 	var json_caracter = archivo.get_as_text()
 	archivo.close()
@@ -121,3 +124,4 @@ func cargar_datos():
 	)
 	
 	monedas = datos["personaje"]["monedas"]
+	total_mon()
