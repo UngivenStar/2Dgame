@@ -1,5 +1,6 @@
 extends Area2D
  
+#variables
 enum type_plat {FIJA, OSCILATORIAH, OSCILATORIAV, FRAGIL, REBOTE, REINICIO}
 @export var type: type_plat = type_plat.FIJA;
 @export var rebote := 2.0 
@@ -9,7 +10,7 @@ func _ready():
 	monitorable = true
 	monitoring = true
 	
-
+#cambiar de plataforma segun su tipo
 func act_plat():
 	match type:
 		type_plat.FIJA:
@@ -30,7 +31,7 @@ func act_plat():
 			$Sprite2D.modulate
 			oscilarv()
 
-
+#señal
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("personaje"):
 		match type:
@@ -47,12 +48,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 
-
+#funcion para oscilar horizontalmente
 func oscilarh():
 	var tween = create_tween()
 	tween.tween_property(self, "position:x", position.x+100, 2)
 	tween.tween_property(self, "position:x", position.x-100, 2)
 	tween.set_loops()
+
+#funcion para oscilar verticalmente
 
 func oscilarv():
 	var tween = create_tween()

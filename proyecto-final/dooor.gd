@@ -1,7 +1,6 @@
 extends Node2D
 
 var llave = false
-var llave2 = true
 
 @onready var ui_label = $"../door/Label"
 

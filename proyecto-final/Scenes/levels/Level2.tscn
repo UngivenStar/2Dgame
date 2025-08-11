@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bwdydkfqgmbpj"]
+[gd_scene load_steps=21 format=4 uid="uid://bwdydkfqgmbpj"]
 
 [ext_resource type="Texture2D" uid="uid://57bb0bul3h6s" path="res://Assests/Background/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_1/1.png" id="1_0xt8v"]
 [ext_resource type="Texture2D" uid="uid://dgb8ilcqxgaxp" path="res://Assests/Background/ocean-and-clouds-free-pixel-art-backgrounds/Ocean_8/1.png" id="2_5ictq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bcsfxip5eo551" path="res://Scenes/levels/character/Personaje.tscn" id="10_ohgpn"]
 [ext_resource type="Texture2D" uid="uid://cm7km676s3oio" path="res://Assests/Levels/Level 1/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="11_qhmkd"]
 [ext_resource type="PackedScene" uid="uid://cvl3c75g04358" path="res://Scenes/levels/coin.tscn" id="12_01bk6"]
+[ext_resource type="PackedScene" uid="uid://bv3j460gbxqid" path="res://Scripts/plataformas.tscn" id="13_5ictq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6ux3"]
 texture = ExtResource("11_qhmkd")
@@ -726,6 +727,7 @@ position = Vector2(1241.5, 2077)
 shape = SubResource("RectangleShape2D_a8dr6")
 
 [node name="coins" type="Node2D" parent="."]
+position = Vector2(4, -3)
 
 [node name="coin" parent="coins" instance=ExtResource("12_01bk6")]
 position = Vector2(392, 450)
@@ -848,4 +850,20 @@ position = Vector2(1113, 2123)
 position = Vector2(390, 2374)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("10_ohgpn")]
-position = Vector2(557, 2615)
+position = Vector2(557, 2659)
+
+[node name="Area2D" parent="." instance=ExtResource("13_5ictq")]
+position = Vector2(909, 2368)
+type = 4
+
+[node name="Area2D2" parent="." instance=ExtResource("13_5ictq")]
+position = Vector2(1187, 2533)
+type = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1389.0
+offset_top = 2067.0
+offset_right = 1500.0
+offset_bottom = 2116.0
+text = "Estás a salvo...
+Por ahora"
