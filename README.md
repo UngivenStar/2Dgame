@@ -149,7 +149,7 @@ Personaje
 Video 1: https://youtu.be/Ro6GAGUtdpc
 Video 2: https://youtu.be/DpHbCdKw-Zc
 
-(una nutridisculpa es que el formato del video no me dejo subirlo de otra manera)
+
 ----------------------------------------------------------------------------------------------
 
 
