@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvm1viw2ynoj8"]
+
+[ext_resource type="Script" uid="uid://bnqqv6pcwoegq" path="res://Scripts/enemy.gd" id="1_mjk8w"]
+[ext_resource type="Texture2D" uid="uid://bkgc4ofgneqo1" path="res://Assests/Levels/Level 1/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Fly/Fly-Sheet.png" id="2_mjk8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhn87"]
+radius = 1.25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjk8w"]
+radius = 51.25
+
+[node name="enemy" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_mjk8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xhn87")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 2.5)
+scale = Vector2(1.28125, 1.33984)
+texture = ExtResource("2_mjk8w")
+hframes = 4
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+path_max_distance = 10.0
+path_postprocessing = 1
+radius = 0.01
+neighbor_distance = 0.1
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_mjk8w")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

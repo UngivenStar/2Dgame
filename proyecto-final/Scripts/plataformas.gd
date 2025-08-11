@@ -25,6 +25,7 @@ func act_plat():
 			
 		type_plat.REINICIO:
 			$Sprite2D.modulate = Color.RED
+			
 		type_plat.OSCILATORIAV:
 			$Sprite2D.modulate
 			oscilarv()
@@ -55,6 +56,6 @@ func oscilarh():
 
 func oscilarv():
 	var tween = create_tween()
-	tween.tween_property(self, "position:x", position.y+100, 2)
-	tween.tween_property(self, "position:x", position.y-100, 2)
+	tween.tween_property(self, "position:y", position.y+100, 2)
+	tween.tween_property(self, "position:y", position.y-100, 2)
 	tween.set_loops()

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://beyym1x6p1me0"]
+
+[ext_resource type="Script" uid="uid://dfugca1qy6gxd" path="res://Scripts/key.gd" id="1_okr3c"]
+[ext_resource type="Texture2D" uid="uid://s2xmjsjqf71i" path="res://Assests/objects/llave/PS_Items.png" id="2_2ly7p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umley"]
+radius = 3.0
+height = 8.0
+
+[node name="llave" type="Area2D"]
+position = Vector2(1, 1)
+collision_layer = 3
+script = ExtResource("1_okr3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_umley")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_2ly7p")
+hframes = 8
+vframes = 8
+frame = 54
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="puerta_llave" from="." to="." method="_on_puerta_llave"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://3rusa8ynuj6w"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ContadorMonedas" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

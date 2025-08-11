@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://be8dbor343m1y"]
+
+[ext_resource type="Script" uid="uid://b88omt47ayppv" path="res://Scripts/save_load.gd" id="1_8ylsc"]
+[ext_resource type="Script" uid="uid://cfo6pssdb1t00" path="res://Scripts/line_edit.gd" id="2_8p4b1"]
+[ext_resource type="Script" uid="uid://dp2q5avn7pnic" path="res://Scripts/spin_box.gd" id="3_qojwe"]
+
+[node name="SaveLoad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8ylsc")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 374.0
+offset_top = 215.0
+offset_right = 464.0
+offset_bottom = 247.0
+text = "Text to save"
+
+[node name="LineEdit" type="LineEdit" parent="." groups=["SaveLoad"]]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 208.0
+offset_right = 628.0
+offset_bottom = 247.0
+script = ExtResource("2_8p4b1")
+
+[node name="SpinBox" type="SpinBox" parent="." groups=["SaveLoad"]]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 211.0
+offset_right = 766.0
+offset_bottom = 247.0
+script = ExtResource("3_qojwe")
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 260.0
+offset_right = 766.0
+offset_bottom = 297.0
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 305.0
+offset_right = 766.0
+offset_bottom = 341.0
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 350.0
+offset_right = 766.0
+offset_bottom = 382.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 264.0
+offset_right = 638.0
+offset_bottom = 296.0
+text = "Save"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 549.0
+offset_top = 311.0
+offset_right = 639.0
+offset_bottom = 343.0
+text = "Load"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 540.0
+offset_top = 354.0
+offset_right = 630.0
+offset_bottom = 386.0
+text = "Delete"
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

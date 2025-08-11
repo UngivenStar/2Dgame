@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21wrs4n127w2"]
+
+[ext_resource type="Script" uid="uid://uua6qi5bbppk" path="res://Scripts/gameUI.gd" id="1_doukv"]
+
+[node name="UserInterface" type="CanvasLayer"]
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_doukv")
+
+[node name="Score" type="Control" parent="GameUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/Score"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GameUI/Score"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
