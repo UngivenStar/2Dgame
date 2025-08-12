@@ -3036,10 +3036,10 @@ position = Vector2(1762, 2119)
 scale = Vector2(7.26365, 8.21309)
 
 [node name="llave" parent="puerta y llave" instance=ExtResource("12_su1cr")]
-position = Vector2(-37.9974, 6.20961)
+position = Vector2(-37.5844, 4.38326)
 
 [node name="door" parent="puerta y llave" instance=ExtResource("14_ux382")]
-position = Vector2(30.1501, 66.7228)
+position = Vector2(30.9762, 66.2357)
 
 [node name="mapa" type="Node2D" parent="."]
 
@@ -3170,6 +3170,6 @@ type = 1
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Node2D2" parent="." instance=ExtResource("21_0epxl")]
-position = Vector2(2115, 3390)
+position = Vector2(2429, 2907)
 
 [connection signal="puerta_llave" from="puerta y llave/llave" to="puerta y llave/door" method="_on_llave_puerta_llave"]
